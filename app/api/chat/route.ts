@@ -1,9 +1,9 @@
-import { google } from "@ai-sdk/google";
+import { groq } from '@ai-sdk/groq';
 import { stepCountIs, streamText, jsonSchema, convertToModelMessages } from "ai";
 import type { Tool, UIMessage } from "ai";
 import { headers } from "next/headers";
 
-const model = google("gemini-2.5-flash");
+const model = groq("llama-3.1-8b-instant");
 
 // Rate Limiting
 const RATE_LIMIT = 10; // 최대 요청 횟수
