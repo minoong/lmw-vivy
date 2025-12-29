@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LMW Vivy AI
 
-## Getting Started
+AI SDK와 Google Gemini 2.0 Flash를 활용한 멀티스텝 도구 호출 채팅 애플리케이션
 
-First, run the development server:
+**Demo:** https://lmw-vivy.vercel.app/
+
+## 주요 기능
+
+- **멀티스텝 도구 호출** - 검색, 분석, 종합 도구를 순차적으로 사용하여 답변 생성
+- **Generative UI** - 날씨 정보를 시각적인 카드 UI로 표시
+- **Rate Limiting** - 10회 요청 제한
+
+## 기술 스택
+
+- [Next.js 16](https://nextjs.org/) - App Router
+- [AI SDK](https://ai-sdk.dev/) - AI Elements UI 컴포넌트
+- [Google Gemini 2.0 Flash](https://ai.google.dev/) - LLM 모델
+- [Tailwind CSS](https://tailwindcss.com/) - 스타일링
+- [shadcn/ui](https://ui.shadcn.com/) - UI 컴포넌트
+
+### AI SDK 패키지
+
+| 패키지 | 버전 | 설명 |
+|--------|------|------|
+| `ai` | ^6.0.3 | AI SDK 코어 - streamText, Tool, UIMessage 등 |
+| `@ai-sdk/react` | ^3.0.3 | React 훅 - useChat |
+| `@ai-sdk/google` | ^3.0.1 | Google Gemini 프로바이더 |
+
+## 시작하기
+
+### 환경 변수 설정
+
+`.env.local` 파일을 생성하고 Google AI API 키를 설정합니다:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+GOOGLE_GENERATIVE_AI_API_KEY=your_api_key_here
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 설치 및 실행
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000 에서 확인할 수 있습니다.
 
-## Learn More
+## 사용 가능한 도구
 
-To learn more about Next.js, take a look at the following resources:
+| 도구 | 설명 |
+|------|------|
+| weather | 도시별 날씨 정보 조회 |
+| search | 정보 검색 |
+| analyze | 데이터 분석 |
+| synthesize | 정보 종합 |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 라이선스
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
