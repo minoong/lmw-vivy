@@ -3,7 +3,7 @@ import { stepCountIs, streamText, jsonSchema, convertToModelMessages } from "ai"
 import type { Tool, UIMessage } from "ai";
 import { headers } from "next/headers";
 
-const model = google("gemini-2.0-flash");
+const model = google("gemini-2.5-flash");
 
 // Rate Limiting
 const RATE_LIMIT = 10; // 최대 요청 횟수

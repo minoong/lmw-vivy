@@ -145,7 +145,7 @@ export default function Home() {
             <PromptInputFooter>
               <div className="flex items-center gap-1.5 text-muted-foreground text-xs">
                 <SparklesIcon className="size-3" />
-                <span>gemini-2.0-flash</span>
+                <span>gemini-2.5-flash</span>
               </div>
               <PromptInputSubmit status={status} disabled={isLoading} />
             </PromptInputFooter>
